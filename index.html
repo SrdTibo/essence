@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <scipt src="https://code.jquery.com/jquery-3.6.0.js"></scipt>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js "
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=" anonymous "></script>
     <title>Essence</title>
 </head>
 <body>
 <h1>Meteo test</h1>
 
 </body>
+<script>
+    var callBackGetSuccess = function(data){
+        console.log("donnée api", data)
+    }
+    var url="https://public.opendatasoft.com/api/records/1.0/search/?dataset=prix_des_carburants_j_7&q=&facet=cp&facet=pop&facet=city&facet=automate_24_24&facet=fuel&facet=shortage&facet=update&facet=services&facet=brand"
+    $.get(url, callBackGetSuccess).done(function(){
+
+    })
+    .fail(function(){
+        alert("error");
+    })
+    .always(function(){
+
+    });
+</script>
 </html>
